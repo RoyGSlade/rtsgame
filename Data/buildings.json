@@ -1,0 +1,388 @@
+[
+  {
+	"id": "castle",
+	"name": "Castle",
+	"type": "core",
+	"level": 1,
+	"max_level": 1,
+	"hitpoints": 1500,
+	"burnable": false,
+	"workers_required": 4,
+	"input": [],
+	"output": [],
+	"cycle_time": 0,
+	"upgrade": {},
+	"unlocks": [],
+	"requires": [],
+	"sprite_key": "castle",
+	"description": "Central building. If destroyed, you lose.",
+	"loss_condition": true
+  },
+
+  {
+	"id": "farm",
+	"name": "Farm",
+	"type": "food_producer",
+	"level": 1,
+	"max_level": 3,
+	"hitpoints": 200,
+	"burnable": true,
+	"workers_required": 2,
+	"input": [],
+	"output": [
+	  {"resource": "food", "amount": 10}
+	],
+	"cycle_time": 30,
+	"upgrade": {
+	  "2": {
+		"cost": {"wood": 50, "stone": 20, "gold": 100},
+		"workers_required": 4,
+		"output": [{"resource": "food", "amount": 18}],
+		"cycle_time": 24
+	  },
+	  "3": {
+		"cost": {"wood": 100, "stone": 50, "gold": 250},
+		"workers_required": 6,
+		"output": [{"resource": "food", "amount": 25}],
+		"cycle_time": 18
+	  }
+	},
+	"unlocks": [],
+	"requires": [],
+	"sprite_key": "farm",
+	"description": "Produces food each cycle."
+  },
+
+  {
+	"id": "lumber_camp",
+	"name": "Lumber Camp",
+	"type": "wood_producer",
+	"level": 1,
+	"max_level": 3,
+	"hitpoints": 180,
+	"burnable": true,
+	"workers_required": 2,
+	"input": [],
+	"output": [
+	  {"resource": "wood", "amount": 8}
+	],
+	"cycle_time": 30,
+	"upgrade": {
+	  "2": {
+		"cost": {"wood": 40, "stone": 20, "gold": 80},
+		"workers_required": 4,
+		"output": [{"resource": "wood", "amount": 15}],
+		"cycle_time": 22
+	  },
+	  "3": {
+		"cost": {"wood": 90, "stone": 40, "gold": 180},
+		"workers_required": 6,
+		"output": [{"resource": "wood", "amount": 24}],
+		"cycle_time": 16
+	  }
+	},
+	"unlocks": [],
+	"requires": [],
+	"sprite_key": "lumber_camp",
+	"description": "Harvests wood each cycle."
+  },
+
+  {
+	"id": "stone_quarry",
+	"name": "Stone Quarry",
+	"type": "stone_producer",
+	"level": 1,
+	"max_level": 3,
+	"hitpoints": 220,
+	"burnable": true,
+	"workers_required": 2,
+	"input": [],
+	"output": [
+	  {"resource": "stone", "amount": 6}
+	],
+	"cycle_time": 35,
+	"upgrade": {
+	  "2": {
+		"cost": {"wood": 60, "stone": 30, "gold": 110},
+		"workers_required": 4,
+		"output": [{"resource": "stone", "amount": 12}],
+		"cycle_time": 27
+	  },
+	  "3": {
+		"cost": {"wood": 110, "stone": 60, "gold": 260},
+		"workers_required": 6,
+		"output": [{"resource": "stone", "amount": 20}],
+		"cycle_time": 19
+	  }
+	},
+	"unlocks": [],
+	"requires": [],
+	"sprite_key": "stone_quarry",
+	"description": "Produces stone from the earth."
+  },
+
+  {
+	"id": "gold_mine",
+	"name": "Gold Mine",
+	"type": "gold_producer",
+	"level": 1,
+	"max_level": 3,
+	"hitpoints": 240,
+	"burnable": true,
+	"workers_required": 2,
+	"input": [],
+	"output": [
+	  {"resource": "gold", "amount": 5}
+	],
+	"cycle_time": 40,
+	"upgrade": {
+	  "2": {
+		"cost": {"wood": 90, "stone": 40, "gold": 0},
+		"workers_required": 4,
+		"output": [{"resource": "gold", "amount": 9}],
+		"cycle_time": 32
+	  },
+	  "3": {
+		"cost": {"wood": 140, "stone": 80, "gold": 100},
+		"workers_required": 6,
+		"output": [{"resource": "gold", "amount": 14}],
+		"cycle_time": 23
+	  }
+	},
+	"unlocks": [],
+	"requires": [],
+	"sprite_key": "gold_mine",
+	"description": "Extracts gold ore for wealth."
+  },
+
+  {
+	"id": "storefront",
+	"name": "Storefront",
+	"type": "trade_hub",
+	"level": 1,
+	"max_level": 3,
+	"hitpoints": 150,
+	"burnable": true,
+	"workers_required": 2,
+	"input": [{"resource": "any", "amount": 1}],
+	"output": [{"resource": "gold", "amount": 1}],
+	"cycle_time": 30,
+	"upgrade": {
+	  "2": {
+		"cost": {"wood": 50, "stone": 30, "gold": 50},
+		"workers_required": 4,
+		"output": [{"resource": "gold", "amount": 3}],
+		"cycle_time": 24
+	  },
+	  "3": {
+		"cost": {"wood": 100, "stone": 50, "gold": 100},
+		"workers_required": 6,
+		"output": [{"resource": "gold", "amount": 5}],
+		"cycle_time": 18
+	  }
+	},
+	"unlocks": [],
+	"requires": [],
+	"sprite_key": "storefront",
+	"description": "Trades resources for gold. The more variety, the more gold."
+  },
+
+  {
+	"id": "barracks",
+	"name": "Barracks",
+	"type": "unit_spawner",
+	"level": 1,
+	"max_level": 3,
+	"hitpoints": 400,
+	"burnable": true,
+	"workers_required": 2,
+	"input": [{"resource": "gold", "amount": 50}],
+	"output": [
+	  {"unit": "militia", "amount": 1}
+	],
+	"cycle_time": 45,
+	"unit_types": ["militia", "archer"],
+	"unit_requirements": {
+	  "archer": ["fletcher"],
+	  "knight": ["forge", "stable"]
+	},
+	"upgrade": {
+	  "2": {
+		"cost": {"wood": 75, "stone": 50, "gold": 150},
+		"workers_required": 4,
+		"output": [{"unit": "militia", "amount": 2}],
+		"cycle_time": 38
+	  },
+	  "3": {
+		"cost": {"wood": 120, "stone": 80, "gold": 300},
+		"workers_required": 6,
+		"output": [{"unit": "militia", "amount": 3}],
+		"cycle_time": 30
+	  }
+	},
+	"unlocks": [],
+	"requires": [],
+	"sprite_key": "barracks",
+	"description": "Trains militia and archers. Higher levels increase output."
+  },
+
+  {
+	"id": "forge",
+	"name": "Forge",
+	"type": "converter",
+	"level": 1,
+	"max_level": 3,
+	"hitpoints": 350,
+	"burnable": true,
+	"workers_required": 2,
+	"input": [
+	  {"resource": "iron", "amount": 5}
+	],
+	"output": [
+	  {"resource": "steel", "amount": 2}
+	],
+	"cycle_time": 45,
+	"upgrade": {
+	  "2": {
+		"cost": {"wood": 60, "stone": 80, "gold": 180},
+		"workers_required": 4,
+		"output": [{"resource": "steel", "amount": 4}],
+		"cycle_time": 35
+	  },
+	  "3": {
+		"cost": {"wood": 90, "stone": 120, "gold": 400},
+		"workers_required": 6,
+		"output": [{"resource": "steel", "amount": 6}],
+		"cycle_time": 25
+	  }
+	},
+	"unlocks": ["knight", "paladin"],
+	"requires": [],
+	"sprite_key": "forge",
+	"description": "Turns iron into steel, unlocking advanced units and upgrades."
+  },
+
+  {
+	"id": "watchtower",
+	"name": "Watchtower",
+	"type": "defense",
+	"level": 1,
+	"max_level": 3,
+	"hitpoints": 300,
+	"burnable": true,
+	"workers_required": 1,
+	"input": [],
+	"output": [],
+	"cycle_time": 0,
+	"upgrade": {
+	  "2": {
+		"cost": {"wood": 60, "stone": 40, "gold": 80},
+		"workers_required": 2,
+		"hitpoints": 400
+	  },
+	  "3": {
+		"cost": {"wood": 100, "stone": 70, "gold": 200},
+		"workers_required": 3,
+		"hitpoints": 550
+	  }
+	},
+	"unlocks": [],
+	"requires": [],
+	"sprite_key": "watchtower",
+	"description": "Defensive tower that provides vision and attack bonus in range."
+  },
+
+  {
+	"id": "wall",
+	"name": "Wall",
+	"type": "defense",
+	"level": 1,
+	"max_level": 3,
+	"hitpoints": 250,
+	"burnable": true,
+	"workers_required": 0,
+	"input": [],
+	"output": [],
+	"cycle_time": 0,
+	"upgrade": {
+	  "2": {
+		"cost": {"stone": 40, "gold": 20},
+		"hitpoints": 400
+	  },
+	  "3": {
+		"cost": {"stone": 90, "gold": 50},
+		"hitpoints": 700
+	  }
+	},
+	"unlocks": [],
+	"requires": [],
+	"sprite_key": "wall",
+	"description": "Basic wall for defense. Upgrades increase durability."
+  },
+
+  {
+	"id": "house",
+	"name": "House",
+	"type": "population_cap",
+	"level": 1,
+	"max_level": 3,
+	"hitpoints": 120,
+	"burnable": true,
+	"workers_required": 0,
+	"input": [],
+	"output": [
+	  {"population_cap": 5}
+	],
+	"cycle_time": 0,
+	"upgrade": {
+	  "2": {
+		"cost": {"wood": 30, "gold": 10},
+		"output": [{"population_cap": 10}]
+	  },
+	  "3": {
+		"cost": {"wood": 70, "stone": 20, "gold": 25},
+		"output": [{"population_cap": 18}]
+	  }
+	},
+	"unlocks": [],
+	"requires": [],
+	"sprite_key": "house",
+	"description": "Increases worker and unit population cap."
+  },
+
+  {
+	"id": "fletcher",
+	"name": "Fletcher",
+	"type": "production",
+	"level": 1,
+	"max_level": 3,
+	"hitpoints": 150,
+	"burnable": true,
+	"workers_required": 1,
+	"input": [
+	  {"resource": "wood", "amount": 3}
+	],
+	"output": [
+	  {"resource": "arrows", "amount": 8}
+	],
+	"cycle_time": 20,
+	"upgrade": {
+	  "2": {
+		"cost": {"wood": 40, "gold": 15},
+		"workers_required": 2,
+		"output": [{"resource": "arrows", "amount": 15}],
+		"cycle_time": 15
+	  },
+	  "3": {
+		"cost": {"wood": 60, "gold": 30},
+		"workers_required": 3,
+		"output": [{"resource": "arrows", "amount": 25}],
+		"cycle_time": 10
+	  }
+	},
+	"unlocks": ["archer"],
+	"requires": [],
+	"sprite_key": "fletcher",
+	"description": "Produces arrows. Unlocks archers for barracks."
+  }
+]

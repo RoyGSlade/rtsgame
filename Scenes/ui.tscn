@@ -1,0 +1,80 @@
+[gd_scene load_steps=2 format=3 uid="uid://d285pluyaj8bb"]
+
+[ext_resource type="Script" uid="uid://bnmof4nir7qs0" path="res://Scenes/ui_selection_bar.gd" id="1_jxero"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="ResourceBar" type="HBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -126.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="GoldIcon" type="Label" parent="ResourceBar"]
+layout_mode = 2
+text = "Gold:"
+
+[node name="FoodIcon" type="Label" parent="ResourceBar"]
+layout_mode = 2
+text = "Food:"
+
+[node name="PopIcon" type="Label" parent="ResourceBar"]
+layout_mode = 2
+text = "Pop:"
+
+[node name="UnitTabs" type="VBoxContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 93.0
+offset_top = -98.0
+offset_right = 225.0
+offset_bottom = -58.0
+grow_vertical = 0
+alignment = 2
+
+[node name="Tabs" type="HBoxContainer" parent="UnitTabs"]
+layout_mode = 2
+
+[node name="Buildings" type="Button" parent="UnitTabs/Tabs"]
+layout_mode = 2
+text = "Buildings"
+
+[node name="Units" type="Button" parent="UnitTabs/Tabs"]
+layout_mode = 2
+text = "Units"
+
+[node name="Menu" type="Button" parent="."]
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 55.0
+offset_bottom = 30.0
+text = "Menu"
+
+[node name="Ui_SelectionBar" type="HBoxContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_jxero")
+
+[node name="Button" type="Button" parent="Ui_SelectionBar"]
+layout_mode = 2
+text = "Farm"
+
+[node name="Button2" type="Button" parent="Ui_SelectionBar"]
+layout_mode = 2
+text = "SawMill"
+
+[node name="Button3" type="Button" parent="Ui_SelectionBar"]
+layout_mode = 2
+text = "Barracks"
+
+[node name="Button4" type="Button" parent="Ui_SelectionBar"]
+layout_mode = 2
+text = "Stone"

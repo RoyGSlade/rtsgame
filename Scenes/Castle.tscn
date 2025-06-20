@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnte8g12urcs"]
+
+[ext_resource type="Texture2D" uid="uid://cvu2riackx6lu" path="res://Tiles/Tilesetbygpt.png" id="1_1l2gd"]
+[ext_resource type="Script" uid="uid://djs0nhipxu6u4" path="res://Scripts/castle.gd" id="1_qpb5b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qpb5b"]
+size = Vector2(138, 103)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qwl1g"]
+radius = 3234.53
+
+[node name="Castle" type="Node2D"]
+script = ExtResource("1_qpb5b")
+
+[node name="Area2DCastle" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2DCastle"]
+texture = ExtResource("1_1l2gd")
+region_enabled = true
+region_rect = Rect2(792.253, 119.988, 176.298, 111.955)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DCastle"]
+position = Vector2(-3, -1.5)
+shape = SubResource("RectangleShape2D_qpb5b")
+
+[node name="BuildArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildArea"]
+shape = SubResource("CircleShape2D_qwl1g")
