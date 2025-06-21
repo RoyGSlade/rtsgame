@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://tl1uib7rhuny"]
+
+[ext_resource type="Script" uid="uid://d15a5x2p3tksh" path="res://Scripts/Buildings/stone_quarry.gd" id="1_3sk71"]
+[ext_resource type="Texture2D" uid="uid://cvu2riackx6lu" path="res://Tiles/Tilesetbygpt.png" id="2_iemnn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avus0"]
+size = Vector2(152, 108)
+
+[node name="stone_quarry" type="Node2D"]
+script = ExtResource("1_3sk71")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("2_iemnn")
+region_enabled = true
+region_rect = Rect2(536.405, 318.116, 217.355, 146.281)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-16, 8)
+shape = SubResource("RectangleShape2D_avus0")
+
+[node name="ProductionTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="timeout" from="ProductionTimer" to="." method="_on_production_timer_timeout"]

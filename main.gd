@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready():
-	var castle = preload("res://Scenes/Castle.tscn").instantiate()
+	var castle = preload("res://Scenes/Buildings/Castle.tscn").instantiate()
 	castle.position = Vector2(512, 512)
 	$Buildings.add_child(castle)
 	GameState.player_castle = castle

@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://l4dn01bhgdhp"]
+[gd_scene load_steps=11 format=4 uid="uid://l4dn01bhgdhp"]
 
 [ext_resource type="Script" uid="uid://bvspm33oj3tuy" path="res://main.gd" id="1_fos0i"]
 [ext_resource type="Script" uid="uid://d1lrwgnorgsjl" path="res://Scripts/camera_2d.gd" id="1_glv2v"]
 [ext_resource type="PackedScene" uid="uid://d285pluyaj8bb" path="res://Scenes/ui.tscn" id="2_fos0i"]
 [ext_resource type="Texture2D" uid="uid://br08upnl7qk10" path="res://Tiles/tiles.png" id="2_r0du0"]
 [ext_resource type="Texture2D" uid="uid://0ime2m0fbocc" path="res://Tiles/assets.png" id="3_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://tl1uib7rhuny" path="res://Scenes/Buildings/stone_quarry.tscn" id="6_3dxm6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fos0i"]
 texture = ExtResource("2_r0du0")
@@ -539,3 +540,5 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Buildings" type="Node2D" parent="."]
+
+[node name="Quarry" parent="." instance=ExtResource("6_3dxm6")]

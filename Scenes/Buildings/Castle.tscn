@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cnte8g12urcs"]
 
-[ext_resource type="Texture2D" uid="uid://cvu2riackx6lu" path="res://Tiles/Tilesetbygpt.png" id="1_1l2gd"]
-[ext_resource type="Script" uid="uid://djs0nhipxu6u4" path="res://Scripts/castle.gd" id="1_qpb5b"]
+[ext_resource type="Script" uid="uid://djs0nhipxu6u4" path="res://Scripts/castle.gd" id="1_dx17m"]
+[ext_resource type="Texture2D" uid="uid://cvu2riackx6lu" path="res://Tiles/Tilesetbygpt.png" id="2_mjsvr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpb5b"]
 size = Vector2(138, 103)
@@ -10,12 +10,12 @@ size = Vector2(138, 103)
 radius = 3234.53
 
 [node name="Castle" type="Node2D"]
-script = ExtResource("1_qpb5b")
+script = ExtResource("1_dx17m")
 
 [node name="Area2DCastle" type="Area2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2DCastle"]
-texture = ExtResource("1_1l2gd")
+texture = ExtResource("2_mjsvr")
 region_enabled = true
 region_rect = Rect2(792.253, 119.988, 176.298, 111.955)
 

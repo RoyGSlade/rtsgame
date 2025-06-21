@@ -1,7 +1,7 @@
 extends Node
 
 var buildings = {}
-var building_scn = preload("res://Scenes/building.tscn")
+var building_scn = preload("res://Scenes/Buildings/building.tscn")
 
 func _ready():
 	var file = FileAccess.open("res://Data/buildings.json", FileAccess.READ)
@@ -50,3 +50,6 @@ func spawn_building(building_id: String, pos: Vector2) -> Node2D:
 
 func get_building_list() -> Array:
 	return buildings.keys()
+
+func get_building_data(id: String) -> Dictionary:
+	return buildings.get(id, {})

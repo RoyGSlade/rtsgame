@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://d285pluyaj8bb"]
+[gd_scene load_steps=3 format=3 uid="uid://d285pluyaj8bb"]
 
 [ext_resource type="Script" uid="uid://bnmof4nir7qs0" path="res://Scenes/ui_selection_bar.gd" id="1_jxero"]
+[ext_resource type="Script" uid="uid://clyew82xf5uwp" path="res://scripts/ui.gd" id="1_qdvrb"]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_qdvrb")
 
 [node name="ResourceBar" type="HBoxContainer" parent="."]
 anchors_preset = 1
@@ -78,3 +80,19 @@ text = "Barracks"
 [node name="Button4" type="Button" parent="Ui_SelectionBar"]
 layout_mode = 2
 text = "Stone"
+
+[node name="ResourceDisplay" type="GridContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Food" type="Label" parent="ResourceDisplay"]
+layout_mode = 2
+
+[node name="Gold" type="Label" parent="ResourceDisplay"]
+layout_mode = 2
+
+[node name="Wood" type="Label" parent="ResourceDisplay"]
+layout_mode = 2
+
+[node name="Stone" type="Label" parent="ResourceDisplay"]
+layout_mode = 2

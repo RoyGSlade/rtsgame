@@ -17,7 +17,7 @@ func _unhandled_input(event):
 			var snapped_pos = mouse_pos.snapped(Vector2(32, 32))
 			match GameState.placing_type:
 				"Farm":
-					var farm = preload("res://Scenes/building.tscn").instantiate()
+					var farm = preload("res://Scenes/Buildings/building.tscn").instantiate()
 					farm.position = snapped_pos
 					get_parent().add_child(farm)  # Or $Buildings if you're organizing
 				# Add more as needed
