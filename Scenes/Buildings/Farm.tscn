@@ -1,13 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://82dg44u05rto"]
 
-[ext_resource type="Script" uid="uid://c8w777185hi56" path="res://Scripts/building.gd" id="1_j65b4"]
+[ext_resource type="Script" uid="uid://n0t4soplfafn" path="res://Scripts/Buildings/Farm.gd" id="1_1bpkm"]
 [ext_resource type="Texture2D" uid="uid://cvu2riackx6lu" path="res://Tiles/Tilesetbygpt.png" id="2_1bpkm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_avus0"]
 size = Vector2(167, 124)
 
 [node name="Building" type="Node2D"]
-script = ExtResource("1_j65b4")
+scale = Vector2(0.33, 0.33)
+script = ExtResource("1_1bpkm")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -20,8 +21,10 @@ region_rect = Rect2(298.278, 329.78, 183.019, 144.823)
 position = Vector2(-1.5, 3)
 shape = SubResource("RectangleShape2D_avus0")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="ProductionTimer" type="Timer" parent="."]
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[connection signal="timeout" from="ProductionTimer" to="." method="_on_timer_timeout"]

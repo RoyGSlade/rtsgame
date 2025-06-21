@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://d28rcllhefoha"]
+
+[ext_resource type="Script" uid="uid://d2h321sdsl5t1" path="res://Scenes/Units/swordsman.gd" id="1_lwitd"]
+[ext_resource type="Texture2D" uid="uid://c3pfwhybkebgq" path="res://Units/rogues.png" id="2_tdntt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8ei62"]
+radius = 6.0
+height = 28.0
+
+[node name="Swordsman" type="Node2D"]
+script = ExtResource("1_lwitd")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_tdntt")
+region_enabled = true
+region_rect = Rect2(37.3029, 1.8326, 20.6838, 29.8727)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_8ei62")

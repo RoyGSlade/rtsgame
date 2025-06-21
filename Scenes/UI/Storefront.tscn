@@ -1,0 +1,69 @@
+[gd_scene load_steps=2 format=3 uid="uid://bus8lxq0lb7gh"]
+
+[ext_resource type="Script" uid="uid://cs4eru15v6ftr" path="res://Scenes/UI/storefront.gd" id="1_cinwg"]
+
+[node name="Storefront" type="Panel"]
+script = ExtResource("1_cinwg")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 3
+
+[node name="Label4" type="Label" parent="GridContainer"]
+layout_mode = 2
+
+[node name="CloseBtn" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Close"
+
+[node name="Label6" type="Label" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "20 Wood"
+horizontal_alignment = 1
+
+[node name="BuyWood" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Buy (-20g)"
+
+[node name="SellWood" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Sell (+10g)"
+
+[node name="Label2" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "15 Food"
+horizontal_alignment = 1
+
+[node name="BuyFood" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Buy (-20g)"
+
+[node name="SellFood" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Sell (+10g)"
+
+[node name="Label3" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "12 Stone"
+horizontal_alignment = 1
+
+[node name="BuyStone" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Buy (-30g)"
+
+[node name="SellStone" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Sell (+15g)"
+
+[connection signal="pressed" from="GridContainer/CloseBtn" to="." method="_on_close_btn_pressed"]
+[connection signal="pressed" from="GridContainer/BuyWood" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="GridContainer/SellWood" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="GridContainer/BuyFood" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="GridContainer/SellFood" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="GridContainer/BuyStone" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="GridContainer/SellStone" to="." method="_on_button_6_pressed"]

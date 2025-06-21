@@ -23,6 +23,8 @@
 	"id": "farm",
 	"name": "Farm",
 	"type": "food_producer",
+	"scene_path": "res://Scenes/Buildings/Farm.tscn",
+	"sprite_region": [298, 330, 183, 145],
 	"level": 1,
 	"max_level": 3,
 	"hitpoints": 200,
@@ -54,9 +56,11 @@
   },
 
   {
-	"id": "lumber_camp",
-	"name": "Lumber Camp",
+	"id": "sawmill",
+	"name": "sawmill",
 	"type": "wood_producer",
+	"scene_path": "res://Scenes/Buildings/Sawmill.tscn",
+	"sprite_region": [309, 524, 186, 172],
 	"level": 1,
 	"max_level": 3,
 	"hitpoints": 180,
@@ -83,7 +87,7 @@
 	},
 	"unlocks": [],
 	"requires": [],
-	"sprite_key": "lumber_camp",
+	"sprite_key": "Sawmill",
 	"description": "Harvests wood each cycle."
   },
 
@@ -91,6 +95,8 @@
 	"id": "stone_quarry",
 	"name": "Stone Quarry",
 	"type": "stone_producer",
+	"scene_path": "res://Scenes/Buildings/stone_quarry.tscn",
+	"sprite_region": [536, 318, 217, 146],
 	"level": 1,
 	"max_level": 3,
 	"hitpoints": 220,
@@ -156,41 +162,20 @@
   },
 
   {
-	"id": "storefront",
-	"name": "Storefront",
-	"type": "trade_hub",
-	"level": 1,
-	"max_level": 3,
-	"hitpoints": 150,
-	"burnable": true,
-	"workers_required": 2,
-	"input": [{"resource": "any", "amount": 1}],
-	"output": [{"resource": "gold", "amount": 1}],
-	"cycle_time": 30,
-	"upgrade": {
-	  "2": {
-		"cost": {"wood": 50, "stone": 30, "gold": 50},
-		"workers_required": 4,
-		"output": [{"resource": "gold", "amount": 3}],
-		"cycle_time": 24
-	  },
-	  "3": {
-		"cost": {"wood": 100, "stone": 50, "gold": 100},
-		"workers_required": 6,
-		"output": [{"resource": "gold", "amount": 5}],
-		"cycle_time": 18
-	  }
-	},
-	"unlocks": [],
-	"requires": [],
-	"sprite_key": "storefront",
-	"description": "Trades resources for gold. The more variety, the more gold."
-  },
+  "id": "marketplace",
+  "name": "Marketplace",
+  "scene_path": "res://Scenes/Buildings/Marketplace.tscn",
+  "sprite_key": "marketplace",
+  "use_full_texture": true,
+  "description": "Buy and sell resources."
+},
 
   {
 	"id": "barracks",
 	"name": "Barracks",
+	"scene_path": "res://Scenes/Buildings/Barracks.tscn",
 	"type": "unit_spawner",
+	"sprite_region": [74, 763, 206, 155],
 	"level": 1,
 	"max_level": 3,
 	"hitpoints": 400,

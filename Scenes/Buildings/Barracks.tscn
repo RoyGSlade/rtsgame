@@ -1,13 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://cynpo3icjv76g"]
 
-[ext_resource type="Script" uid="uid://c8w777185hi56" path="res://Scripts/building.gd" id="1_r5wdc"]
+[ext_resource type="Script" uid="uid://birhm3qubkm10" path="res://Scripts/Buildings/barracks.gd" id="1_e3vjf"]
 [ext_resource type="Texture2D" uid="uid://cvu2riackx6lu" path="res://Tiles/Tilesetbygpt.png" id="2_e3vjf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_avus0"]
 size = Vector2(145, 137)
 
 [node name="Building" type="Node2D"]
-script = ExtResource("1_r5wdc")
+scale = Vector2(0.33, 0.33)
+script = ExtResource("1_e3vjf")
 
 [node name="Area2D" type="Area2D" parent="."]
 

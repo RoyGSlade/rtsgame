@@ -6,6 +6,7 @@ var output := []
 @export var building_id := "stone_quarry"
 
 func _ready():
+	print("🔸 StoneQuarry _ready() — building_id =", building_id)
 	data = BuildingManager.get_building_data(building_id)
 
 	if data.is_empty():
@@ -29,3 +30,6 @@ func _on_production_timer_timeout():
 		if entry.has("resource") and entry.has("amount"):
 			ResourceManager.add_resource(entry.resource, entry.amount)
 			print("[StoneQuarry] +", entry.amount, entry.resource)
+func setup(data_dict: Dictionary) -> void:
+	super.setup(data_dict)  # calls the base class version
+	# then setup timers, outputs, etc.

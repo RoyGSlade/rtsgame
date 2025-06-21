@@ -7,17 +7,43 @@ func _ready():
 	GameState.player_castle = castle
 
 func _unhandled_input(event):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		if not GameState.placement_mode:
-			return
+	if ghost_building and event is InputEventMouseButton and event.pressed:
+		if event.is_action("Select"):
+			# Place building
+			var pos = ghost_building.position
+			ghost_building.queue_free()
+			ghost_building = null
+			BuildingManager.spawn_building(placing_building, pos)
+			placing_building = ""
+			GameState.placement_mode = false
+		elif event.is_action("Deselect"):
+			# Cancel placement
+			ghost_building.queue_free()
+			ghost_building = null
+			placing_building = ""
+			GameState.placement_mode = false
 
-		var pos = get_global_mouse_position()
-		
-		# Check build zone
-		if GameState.player_castle and GameState.player_castle.can_build_here(pos):
-			var building = BuildingManager.spawn_building(GameState.placing_type, pos)
-			if building:
-				$Buildings.add_child(building)
-				GameState.clear_placement_mode()
-		else:
-			print("Too far from castle to build!")
+var placing_building: String = ""
+var ghost_building: Node2D = null
+
+func start_building_placement(building_id: String) -> void:
+	# Remove any old ghost
+	if ghost_building:
+		ghost_building.queue_free()
+	placing_building = building_id
+
+	# Instance the ghost
+	var scene_path = "res://Scenes/Buildings/%s.tscn" % building_id
+	ghost_building = load(scene_path).instantiate() as Node2D
+
+	# Make it semi-transparent
+	var sprite = ghost_building.get_node("Area2D/Sprite2D") as Sprite2D
+	sprite.modulate.a = 0.5
+
+
+	add_child(ghost_building)
+
+func _process(_delta: float) -> void:
+	# Follow mouse & snap to 32×32 grid
+	if ghost_building:
+		ghost_building.position = get_global_mouse_position().snapped(Vector2(32, 32))
