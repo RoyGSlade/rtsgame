@@ -1,0 +1,93 @@
+{
+	"buildings": [
+		{
+			"custom_data": {
+
+			},
+			"id": "farm",
+			"position": {
+				"x": -128.0,
+				"y": 32.0
+			},
+			"rotation": 0.0
+		},
+		{
+			"custom_data": {
+
+			},
+			"id": "farm",
+			"position": {
+				"x": -128.0,
+				"y": 32.0
+			},
+			"rotation": 0.0
+		},
+		{
+			"custom_data": {
+
+			},
+			"id": "marketplace",
+			"position": {
+				"x": -64.0,
+				"y": 96.0
+			},
+			"rotation": 0.0
+		},
+		{
+			"custom_data": {
+
+			},
+			"id": "marketplace",
+			"position": {
+				"x": -64.0,
+				"y": 96.0
+			},
+			"rotation": 0.0
+		},
+		{
+			"custom_data": {
+
+			},
+			"id": "farm",
+			"position": {
+				"x": 0.0,
+				"y": 32.0
+			},
+			"rotation": 0.0
+		},
+		{
+			"custom_data": {
+
+			},
+			"id": "farm",
+			"position": {
+				"x": 0.0,
+				"y": 32.0
+			},
+			"rotation": 0.0
+		},
+		{
+			"custom_data": {
+
+			},
+			"id": "stone_quarry",
+			"position": {
+				"x": -64.0,
+				"y": -64.0
+			},
+			"rotation": 0.0
+		}
+	],
+	"resources": {
+		"resources": {
+			"food": 440.0,
+			"gold": 3100.0,
+			"iron": 0.0,
+			"population": 0.0,
+			"population_cap": 0.0,
+			"steel": 0.0,
+			"stone": 40.0,
+			"wood": 140.0
+		}
+	}
+}

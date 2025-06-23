@@ -70,6 +70,17 @@ func decrease_population(amount: int = 1) -> void:
 	resources["population"] = max(resources["population"] - amount, 0)
 	emit_signal("resources_changed", resources)
 
+# ---- SAVE/LOAD ----
+func save_state() -> Dictionary:
+	return {
+		"resources": resources.duplicate(true)
+	}
+	
+func load_state(data: Dictionary) -> void:
+	if data.has("resources"):
+		resources = data["resources"]
+		emit_signal("resources_changed", resources)
+
 # ---- RESET/UTILITY ----
 
 func reset_resources(new_resources: Dictionary = {}) -> void:
