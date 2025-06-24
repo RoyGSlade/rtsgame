@@ -16,7 +16,7 @@ func _ready():
 	else:
 		push_error("Failed to load buildings.json")
 
-# --- Resource Helpers ---
+# --- Resource Helpers (UNCHANGED) ---
 func get_building_cost(building_id: String) -> Dictionary:
 	var data = buildings.get(building_id)
 	if data == null: return {}
