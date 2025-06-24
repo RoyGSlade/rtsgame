@@ -1,6 +1,7 @@
 extends Node
 
 var buildings = {}
+var unemployed_citizens = []  # Pool of available worker nodes or IDs
 
 func _ready():
 	var file = FileAccess.open("res://Data/buildings.json", FileAccess.READ)
@@ -31,7 +32,7 @@ func can_afford(building_id: String) -> bool:
 func pay_cost(building_id: String) -> void:
 	ResourceManager.spend_resources(get_building_cost(building_id))
 
-# --- Core Placement ---
+# --- Core Placement (UNCHANGED) ---
 func spawn_building(building_id: String, pos: Vector2) -> Node2D:
 	if not can_afford(building_id):
 		print("Cannot afford:", building_id)
@@ -76,13 +77,18 @@ func spawn_building(building_id: String, pos: Vector2) -> Node2D:
 
 	return building
 
+<<<<<<< Updated upstream
 
 # --- Info Access ---
+=======
+# --- Info Access (UNCHANGED) ---
+>>>>>>> Stashed changes
 func get_building_list() -> Array:
 	return buildings.keys()
 
 func get_building_data(id: String) -> Dictionary:
 	return buildings.get(id, {})
+<<<<<<< Updated upstream
 	
 # --- Save/Load Game State
 var placed_buildings: Array = []
@@ -133,3 +139,25 @@ func load_placed_buildings(buildings_data: Array) -> void:
 
 		# Re-track
 		placed_buildings.append(spawned)
+=======
+
+# --- WORKER SYSTEM ---
+func register_unemployed_citizen(worker) -> void:
+	# Call this when a citizen is created or becomes unemployed
+	unemployed_citizens.append(worker)
+
+func request_workers(building: Node, count: int) -> void:
+	var assigned = 0
+	while assigned < count and unemployed_citizens.size() > 0:
+		var worker = unemployed_citizens.pop_front()
+		if is_instance_valid(worker):
+			building.assign_worker(worker)
+			assigned += 1
+	if assigned < count:
+		print("Not enough citizens for building:", building.name, "assigned:", assigned, "needed:", count)
+	# Building will start when all slots are filled (handled in building.gd)
+
+func return_worker(worker) -> void:
+	# Called if building is destroyed or loses a worker
+	unemployed_citizens.append(worker)
+>>>>>>> Stashed changes

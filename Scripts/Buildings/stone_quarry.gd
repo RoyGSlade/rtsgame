@@ -1,8 +1,4 @@
 extends "res://Scripts/building.gd"
-
-var cycle_time := 0
-var workers_required := 0
-var output := []
 @export var building_id := "stone_quarry"
 
 func _ready():
@@ -23,13 +19,18 @@ func _ready():
 	$ProductionTimer.wait_time = cycle_time
 	$ProductionTimer.start()
 
+# Example: Custom FX or sounds when fully staffed
+func on_fully_staffed():
+	super.on_fully_staffed()  # Run parent's logic
+	# Uncomment next line to add FX:
+	# play_quarry_start_fx()
 
+# Example: Custom setup if needed (almost never needed, but shown for reference)
+# func setup(data_dict: Dictionary) -> void:
+#     .setup(data_dict)
+#     # Any unique setup code here
 
-func _on_production_timer_timeout():
-	for entry in output:
-		if entry.has("resource") and entry.has("amount"):
-			ResourceManager.add_resource(entry.resource, entry.amount)
-			print("[StoneQuarry] +", entry.amount, entry.resource)
-func setup(data_dict: Dictionary) -> void:
-	super.setup(data_dict)  # calls the base class version
-	# then setup timers, outputs, etc.
+# Example: Special animation/sound on cycle complete (optional)
+# func _on_ProductionTimer_timeout():
+#     ._on_ProductionTimer_timeout()
+#     # Add stone particles, play mining sound, etc.
