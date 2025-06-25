@@ -1,5 +1,4 @@
 extends "res://Scripts/building.gd"
-@export var building_id := "stone_quarry"
 
 # --- Optionally override or extend parent behavior below ---
 

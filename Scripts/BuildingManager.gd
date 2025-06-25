@@ -82,7 +82,7 @@ func get_building_list() -> Array:
 	return buildings.keys()
 
 func get_building_data(id: String) -> Dictionary:
-        return buildings.get(id, {})
+	return buildings.get(id, {})
 
 # --- Save/Load Game State
 var placed_buildings: Array = []
@@ -132,24 +132,24 @@ func load_placed_buildings(buildings_data: Array) -> void:
 				spawned.load_state(custom_data)
 
 		# Re-track
-                placed_buildings.append(spawned)
+		placed_buildings.append(spawned)
 
 # --- WORKER SYSTEM ---
 func register_unemployed_citizen(worker) -> void:
-        # Call this when a citizen is created or becomes unemployed
-        unemployed_citizens.append(worker)
+	# Call this when a citizen is created or becomes unemployed
+	unemployed_citizens.append(worker)
 
 func request_workers(building: Node, count: int) -> void:
-        var assigned = 0
-        while assigned < count and unemployed_citizens.size() > 0:
-                var worker = unemployed_citizens.pop_front()
-                if is_instance_valid(worker):
-                        building.assign_worker(worker)
-                        assigned += 1
-        if assigned < count:
-                print("Not enough citizens for building:", building.name, "assigned:", assigned, "needed:", count)
-        # Building will start when all slots are filled (handled in building.gd)
+	var assigned = 0
+	while assigned < count and unemployed_citizens.size() > 0:
+	var worker = unemployed_citizens.pop_front()
+	if is_instance_valid(worker):
+	building.assign_worker(worker)
+	assigned += 1
+	if assigned < count:
+	print("Not enough citizens for building:", building.name, "assigned:", assigned, "needed:", count)
+	# Building will start when all slots are filled (handled in building.gd)
 
 func return_worker(worker) -> void:
-        # Called if building is destroyed or loses a worker
-        unemployed_citizens.append(worker)
+	# Called if building is destroyed or loses a worker
+	unemployed_citizens.append(worker)
