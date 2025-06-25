@@ -142,12 +142,12 @@ func register_unemployed_citizen(worker) -> void:
 func request_workers(building: Node, count: int) -> void:
 	var assigned = 0
 	while assigned < count and unemployed_citizens.size() > 0:
-	var worker = unemployed_citizens.pop_front()
-	if is_instance_valid(worker):
-	building.assign_worker(worker)
-	assigned += 1
-	if assigned < count:
-	print("Not enough citizens for building:", building.name, "assigned:", assigned, "needed:", count)
+		var worker = unemployed_citizens.pop_front()
+		if is_instance_valid(worker):
+			building.assign_worker(worker)
+			assigned += 1
+		if assigned < count:
+			print("Not enough citizens for building:", building.name, "assigned:", assigned, "needed:", count)
 	# Building will start when all slots are filled (handled in building.gd)
 
 func return_worker(worker) -> void:

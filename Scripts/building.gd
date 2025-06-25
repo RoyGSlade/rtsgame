@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 signal fully_staffed(building)
 signal production_cycle_complete(output_resource, amount)
