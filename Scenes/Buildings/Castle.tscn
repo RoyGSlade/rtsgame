@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnte8g12urcs"]
+[gd_scene load_steps=6 format=3 uid="uid://cnte8g12urcs"]
 
 [ext_resource type="Script" uid="uid://djs0nhipxu6u4" path="res://Scripts/castle.gd" id="1_dx17m"]
 [ext_resource type="Texture2D" uid="uid://cvu2riackx6lu" path="res://Tiles/Tilesetbygpt.png" id="2_mjsvr"]
@@ -8,6 +8,8 @@ size = Vector2(138, 103)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qwl1g"]
 radius = 3234.53
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dx17m"]
 
 [node name="Castle" type="Node2D"]
 script = ExtResource("1_dx17m")
@@ -24,6 +26,51 @@ position = Vector2(-3, -1.5)
 shape = SubResource("RectangleShape2D_qpb5b")
 
 [node name="BuildArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BuildArea"]
 shape = SubResource("CircleShape2D_qwl1g")
+
+[node name="MenuBar" type="MenuBar" parent="."]
+visible = false
+modulate = Color(0, 1, 1, 1)
+material = SubResource("ShaderMaterial_dx17m")
+offset_left = -101.0
+offset_top = -147.0
+offset_right = 136.0
+offset_bottom = -66.0
+
+[node name="GridContainer" type="GridContainer" parent="MenuBar"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 11.0
+offset_right = 167.0
+offset_bottom = 61.0
+columns = 2
+
+[node name="TotalPopLabel" type="Label" parent="MenuBar/GridContainer"]
+layout_mode = 2
+text = "Total Population"
+
+[node name="TotalPopNumber" type="Label" parent="MenuBar/GridContainer"]
+layout_mode = 2
+text = "10"
+
+[node name="UnemployedLabel" type="Label" parent="MenuBar/GridContainer"]
+layout_mode = 2
+text = "Available Workers"
+
+[node name="UnemployedNumber" type="Label" parent="MenuBar/GridContainer"]
+layout_mode = 2
+text = "3"
+
+[node name="Close" type="Button" parent="MenuBar"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 60.0
+offset_right = 105.0
+offset_bottom = 91.0
+text = "Close"
+
+[connection signal="input_event" from="Area2DCastle" to="." method="_on_area_2d_castle_input_event"]
+[connection signal="pressed" from="MenuBar/Close" to="." method="_on_close_pressed"]

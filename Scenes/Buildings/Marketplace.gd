@@ -1,6 +1,6 @@
 extends "res://Scripts/building.gd"
 
-@export var building_id: String = "marketplace"
+
 
 func _ready():
 	$Area2D/Sprite2D.texture = preload("res://Tiles/MarketPlace.png")

@@ -1,8 +1,18 @@
 extends Node
+signal population_updated(total, unemployed, cap)
 var placement_mode := false
 var placing_type := ""
 var placing_category := ""  # "building" or "unit"
 var player_castle : Node2D
+var total_population = 10
+var unemployed_population = 10
+var population_cap = 10  # Increases with houses
+
+
+func update_population_stats():
+	total_population = clamp(total_population, 0, population_cap)
+	unemployed_population = clamp(unemployed_population, 0, total_population)
+	emit_signal("population_updated", total_population, unemployed_population, population_cap)
 
 func clear_placement_mode():
 	placement_mode = false
